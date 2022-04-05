@@ -38,6 +38,8 @@ def pascal(n):
     for i in range(n, 29):
         i = n
         del answer[i]
+    real = answer[n-1]
+    answer = real
 
     return answer
 
@@ -89,4 +91,3 @@ def decryption(letter):
             answer += 'x'
         else : answer += letter[i]
     return answer
-
