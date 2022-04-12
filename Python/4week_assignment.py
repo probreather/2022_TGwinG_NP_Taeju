@@ -10,18 +10,20 @@
 # 문제 1번
 def intervention(queue):
     answer = list()
-    a = queue.index("성은")
-    if a > 3 :
-        queue.insert(a+1, "승호")
-    else :
-        queue.append("승호")
-
+    if all(queue) == "성은" :
+        a = queue.index("성은")
+        if a > 3 :
+            queue.insert(a+1, "승호")
+        else :
+            queue.append("승호")
+    else : queue.append("승호")
     answer = queue
+
     return answer
 
 # 문제 2번
 def pascal(n):
-    answer = [[0 for i in range(30)] for i in range(30)]
+    answer = [[0 for i in range(30)] for i in range(31)]
     answer[0][0] = 1
     answer[0][1] = 0
 
@@ -31,7 +33,7 @@ def pascal(n):
             answer[i][j] = answer[i-1][j] + answer[i-1][j-1]
 
     del answer[0]
-    for i in range(0, 30):
+    for i in range(0, 31):
         for j in range(0, 29-i):
             answer[i].remove(0)
 
